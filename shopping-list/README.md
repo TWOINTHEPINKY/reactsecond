@@ -1,16 +1,29 @@
-# React + Vite
+# Список покупок — React приложение
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Одностраничное приложение для управления списком покупок. Позволяет добавлять, отмечать купленные, удалять товары, фильтровать, искать, а также переключать светлую/тёмную тему.
 
-Currently, two official plugins are available:
+## Выбранный дизайн-вариант
+**Modern Minimal** – чистый минимализм с акцентными цветами, карточками, адаптивной вёрсткой.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Технологии
+- React (функциональные компоненты, хуки)
+- Vite
+- LocalStorage
+- CSS-переменные (светлая/тёмная тема)
+- Адаптивная вёрстка (mobile-first)
 
-## React Compiler
+## Функциональность
+- Добавление продукта (название, количество, категория) с валидацией
+- Отметка «куплено» / «не куплено»
+- Удаление продукта с анимацией
+- Фильтрация: все / купленные / не купленные
+- Поиск по названию
+- Статистика (всего, куплено, осталось)
+- Переключение светлой и тёмной темы (сохраняется в localStorage)
+- Сохранение всего списка в localStorage
+- Адаптив под мобильные, планшеты и десктоп
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Запуск проекта
+```bash
+npm install
+npm run dev
