@@ -18,7 +18,7 @@ body {
   flex-direction: column;
 }
 
-/* CSS переменные для светлой темы (по умолчанию) */
+/* Светлая тема (по умолчанию) */
 :root {
   --bg-page: #f8f9fa;
   --bg-surface: #ffffff;
@@ -55,13 +55,13 @@ body {
   width: 100%;
 }
 
-/* Адаптивность */
 @media (min-width: 768px) {
   .container {
     padding: 1.5rem;
   }
 }
 
+/* Header */
 .header {
   background-color: var(--bg-surface);
   border-bottom: 1px solid var(--border);
@@ -86,6 +86,7 @@ body {
   }
 }
 
+/* Theme Toggle */
 .theme-toggle {
   background: none;
   border: none;
@@ -104,6 +105,7 @@ body {
   background-color: var(--bg-surface-hover);
 }
 
+/* Product Form */
 .product-form-section {
   background: var(--bg-surface);
   border-radius: var(--radius);
@@ -170,6 +172,7 @@ body {
   background-color: var(--danger-hover);
 }
 
+/* Statistics */
 .statistics {
   display: flex;
   flex-wrap: wrap;
@@ -208,6 +211,7 @@ body {
   }
 }
 
+/* Filters */
 .filters {
   display: flex;
   flex-wrap: wrap;
@@ -253,6 +257,7 @@ body {
   }
 }
 
+/* Product List */
 .product-list {
   list-style: none;
   display: flex;
@@ -296,8 +301,55 @@ body {
   font-size: 1rem;
 }
 .product-details {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.75rem;
   font-size: 0.75rem;
   color: var(--text-secondary);
+}
+.product-amount-control {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--bg-surface-hover);
+  padding: 0.2rem 0.5rem;
+  border-radius: 40px;
+}
+.amount-btn {
+  background: none;
+  border: none;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+  font-size: 1rem;
+}
+.amount-btn:hover:not(:disabled) {
+  background: var(--accent);
+  color: white;
+}
+.amount-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+.amount-value {
+  font-weight: 600;
+  cursor: pointer;
+  min-width: 35px;
+  text-align: center;
+}
+.amount-input {
+  width: 55px;
+  text-align: center;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg-surface);
+  color: var(--text-primary);
+  font-size: 0.75rem;
+  padding: 0.2rem;
 }
 .product-actions {
   display: flex;
@@ -336,6 +388,7 @@ body {
   }
 }
 
+/* Empty List */
 .empty-list {
   text-align: center;
   padding: 3rem 1rem;

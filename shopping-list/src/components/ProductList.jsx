@@ -1,7 +1,7 @@
 import ProductItem from './ProductItem';
 import EmptyList from './EmptyList';
 
-export default function ProductList({ products, onToggle, onDelete }) {
+export default function ProductList({ products, onToggle, onDelete, onUpdateAmount }) {
   if (products.length === 0) {
     return <EmptyList />;
   }
@@ -16,6 +16,7 @@ export default function ProductList({ products, onToggle, onDelete }) {
             product={product}
             onToggle={onToggle}
             onDelete={onDelete}
+            onUpdateAmount={onUpdateAmount}
           />
         ))}
       </ul>

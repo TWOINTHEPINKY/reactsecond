@@ -11,11 +11,10 @@ const CATEGORIES = ['Молочные продукты', 'Овощи и фрук
 
 function App() {
   const [products, setProducts] = useLocalStorage('products', []);
-  const [filter, setFilter] = useState('all'); // 'all', 'bought', 'notBought'
+  const [filter, setFilter] = useState('all');
   const [searchTerm, setSearchTerm] = useState('');
   const [theme, setTheme] = useLocalStorage('theme', 'light');
 
-  // Применяем тему к body
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme);
   }, [theme]);
@@ -34,6 +33,16 @@ function App() {
 
   const deleteProduct = (id) => {
     setProducts(prev => prev.filter(product => product.id !== id));
+  };
+
+  // Функция изменения количества
+  const updateAmount = (id, newAmount) => {
+    if (newAmount < 1) return;
+    setProducts(prev =>
+      prev.map(product =>
+        product.id === id ? { ...product, amount: newAmount } : product
+      )
+    );
   };
 
   const filteredProducts = products
@@ -66,6 +75,7 @@ function App() {
           products={filteredProducts}
           onToggle={toggleBought}
           onDelete={deleteProduct}
+          onUpdateAmount={updateAmount}   // ← обязательно передаём
         />
       </main>
       <footer className="footer container">

@@ -12,3 +12,42 @@
   border-top: 1px solid var(--border);
   font-size: 0.875rem;
 }
+
+/* Дополнительные глобальные стили для кнопок количества */
+.amount-control {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.25rem;
+}
+.amount-btn {
+  background: var(--bg-surface-hover);
+  border: none;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.amount-btn:hover {
+  background: var(--accent);
+  color: white;
+}
+.amount-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.amount-value {
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0 0.25rem;
+}
+.amount-input {
+  width: 60px;
+  text-align: center;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg-surface);
+  color: var(--text-primary);
+}
