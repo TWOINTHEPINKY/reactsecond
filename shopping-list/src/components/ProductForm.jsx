@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { cryptoRandomUUID } from '../utils';
 
 export default function ProductForm({ onAdd, categories }) {
   const [title, setTitle] = useState('');
@@ -28,7 +27,7 @@ export default function ProductForm({ onAdd, categories }) {
     if (!validate()) return;
 
     const newProduct = {
-      id: crypto.randomUUID(),
+      id: crypto.randomUUID(),   // ✅ напрямую, без импорта
       title: title.trim(),
       amount: Number(amount),
       category,
